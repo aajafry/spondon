@@ -1,0 +1,169 @@
+/* common css code */
+html {
+    scroll-behavior: smooth;
+  }
+html,body{
+    margin: 0;
+    padding: 0;
+}
+/* scrollbar css code */
+::-webkit-scrollbar {
+    width: 0.625rem;
+  }
+::-webkit-scrollbar-track {
+    background: white;
+  }
+::-webkit-scrollbar-thumb {
+    background: brown;
+}
+  /* hero area css code */
+.hero__area_wrapper{
+    background-image: url(./assets/banner.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+/*  hero area header css code */
+.hero__area_header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.hero__area_logo img{
+    width: 64px;
+    margin-left: 12px;
+    margin-top: 12px;
+
+}
+.hero__area_open-menu button,
+.doner__blood_group_filter-option button,
+.blood__doner_registration-modal-content_body button{
+    margin-top: 24px;
+    padding: 6px 16px;
+    background-color: brown;
+    color: white;
+    font-weight: 800;
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+
+.hero__area_open-menu button{
+    margin-right: 12px;
+}
+/* hero area filter option css code */
+.doner__blood_group_filter-option{
+    display: flex;
+    justify-content: center;
+    margin: 42px 0px;
+}
+
+.doner__blood_group_filter-option label{
+    font-size: large;
+    font-weight: 800;
+}
+
+.doner__blood_group_filter-option select{
+    margin: 0px 6px;
+    padding: 6px;
+}
+
+/* blood doner info table css code */
+.blood__doner_info{
+    overflow-x: auto;
+}
+
+.blood__doner_info table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+}
+.blood__doner_info th {
+    font-weight: 800;
+}  
+.blood__doner_info th, td {
+    text-align: center;
+    padding: 8px;
+}
+  
+.blood__doner_info  tr:nth-child(even){
+    background-color: #f2f2f2 !important;
+}
+/* footer section css code */
+.footer{
+    text-align: center;
+    margin-top: 42px;
+    padding: 42px 0px;
+    background-color: brown;
+    color: white;
+    font-weight: 600;
+    font-size: large;
+}
+.footer a{
+  text-decoration: none;
+  color: white;
+}
+/* Modal section css code */
+.blood__doner_registration-modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4);
+  }
+  
+  /* Modal Content/Box */
+  .blood__doner_registration-modal-content {
+    background-color: #fefefe;
+    margin: 8% auto; 
+    padding-bottom: 20px;
+    border: 1px solid #888;
+    width: 60%; /* Could be more or less, depending on screen size */
+  }
+  
+  /* The Close Button */
+  .blood__doner_registration-modal-close_btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .blood__doner_registration-modal-close_btn:hover,
+  .blood__doner_registration-modal-close_btn:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .blood__doner_registration-modal-content_header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: brown;
+    color: white;
+    width: 100%;
+  }
+
+  .blood__doner_registration-modal-content_body input,select{
+    /* width: 70%; */
+    padding: 4px 8px;
+    outline: none;
+  }
+
+  .blood__doner_registration-modal-content_body div{
+    margin: 8px auto;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  

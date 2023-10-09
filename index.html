@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./assets/logo.webp" type="image/x-icon">
+    <title>Spondon Blood Donation</title>
+    <!-- External CSS Call -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- hero area section -->
+    <div class="hero__area_wrapper">
+        <!-- hero area header section -->
+        <div class="hero__area_header">
+            <div class="hero__area_logo">
+                <img src="./assets/logo.webp" alt="spondon logo">
+            </div>
+            <div class="hero__area_open-menu">
+                <button type="button" onclick="OpenModelBtn()">Be a Doner</button>
+            </div>
+        </div>
+        <!-- doner filter options -->
+        <div class="doner__blood_group_filter-option">
+            <form>
+                <select name="filter__gender" id="filter__gender" 
+                    onchange="changeEvents(e)" >
+                    <option disabled hidden selected >Choose a gender</option>
+                    <option value="male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+
+                <select name="filter__religion" id="filter__religion" 
+                    onchange="changeEvents(e)" >
+                    <option disabled hidden selected >Choose a Religion</option>
+                    <option value="Muslim">Muslim</option>
+                    <option value="Hindhu">Hindhu</option>
+                    <option value="buddha">Buddha</option>
+                    <option value="Christian">Christian</option>
+                </select>
+
+                <select name="filter__blood_group" id="filter__blood_group"
+                    onchange="changeEvents(e)" >
+                    <option disabled hidden selected >Choose a Blood Group</option>
+                    <option value="A+">A+</option>
+                    <option value="A-">A-</option>
+                    <option value="B+">B+</option>
+                    <option value="B-">B-</option>
+                    <option value="AB+">AB+</option>
+                    <option value="AB-">AB-</option>
+                    <option value="O+">O+</option>
+                    <option value="O-">O-</option>
+                </select>
+                <select name="filter__location" id="filter__location"
+                    onchange="changeEvents(e)" >
+                    <option disabled hidden selected >Choose a Location</option>
+                    <option value="Dhaka">Dhaka</option>
+                    <option value="Chittagong">Chittagong</option>
+                    <option value="Barishal">Barishal</option>
+                    <option value="Khulna">Khulna</option>
+                    <option value="Rajshahi">Rajshahi</option>
+                    <option value="Mymensingh">Mymensingh</option>
+                    <option value="Sylhet">Sylhet</option>
+                    <option value="Rangpur">Rangpur</option>
+                </select>
+                <!-- use this button when use searching option  -->
+                <button type="submit" class="filter_btn"> Find a Doner</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- blood doner information -->
+    <div class="blood__doner_info">
+        <table>
+            <tr>
+                <th>SL</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Gender</th>
+                <th>Religion</th>
+                <th>Blood Group</th>
+                <th>Phone</th>
+                <th>Address</th>
+            </tr>
+        </table>
+    </div>
+    <!-- Modal section -->
+    <div id="blood__doner_registration-modal" class="blood__doner_registration-modal">
+        <!-- Modal content -->
+        <div class="blood__doner_registration-modal-content">
+          <div class="blood__doner_registration-modal-content_header">
+                <h2>Be Donar Registration</h2>
+                <span class="blood__doner_registration-modal-close_btn"
+                    onclick="CloseModelSpan()">&times;
+                </span>
+          </div>
+
+          <div class="blood__doner_registration-modal-content_body">
+            <form >
+               <div>
+                    <input type="text" name="name" id="rgName" placeholder="Full Name" required>
+               </div>
+                <div>
+                    <input type="text" name="age" id="rgAge" placeholder="Age" required>
+                </div>
+                <div>
+                    <select name="gender" 
+                        id="rgGender" 
+                        onchange="changeEvents(e)" >
+                        <option disabled hidden selected >Choose a gender</option>
+                        <option value="male">Male</option>
+                        <option value="Female">Female</option>
+                    </select>
+                </div>
+                <div>
+                    <select name="religion"
+                        id="rgReligion" 
+                        onchange="changeEvents(e)" >
+                        <option disabled hidden selected >Choose a Religion</option>
+                        <option value="Muslim">Muslim</option>
+                        <option value="Hindhu">Hindhu</option>
+                        <option value="buddha">Buddha</option>
+                        <option value="Christian">Christian</option>
+                    </select>
+                </div>
+                <div>
+                    <input type="tel" name="phone" id="rgPhone" placeholder="Phone" required>
+                </div>
+                <div>
+                    <select name="blood_group" id="rgBlood_group"  
+                        onchange="changeEvents(e)" >
+                        <option disabled hidden selected >Choose a Blood Group</option>
+                        <option value="A+">A+</option>
+                        <option value="A-">A-</option>
+                        <option value="B+">B+</option>
+                        <option value="B-">B-</option>
+                        <option value="AB+">AB+</option>
+                        <option value="AB-">AB-</option>
+                        <option value="O+">O+</option>
+                        <option value="O-">O-</option>
+                    </select>
+                </div>
+                <div>
+                    <select name= "location"id= "rgLocation" 
+                        onchange="changeEvents(e)" >
+                        <option disabled hidden selected >Choose a Location</option>
+                        <option value="Dhaka">Dhaka</option>
+                        <option value="Chittagong">Chittagong</option>
+                        <option value="Barishal">Barishal</option>
+                        <option value="Khulna">Khulna</option>
+                        <option value="Rajshahi">Rajshahi</option>
+                        <option value="Mymensingh">Mymensingh</option>
+                        <option value="Sylhet">Sylhet</option>
+                        <option value="Rangpur">Rangpur</option>
+                    </select>
+                </div>
+                <div>  
+                    <button type="submit" id="rgBtn">Register</button>
+                </div>
+            </form>
+          </div>
+        </div>
+    </div>
+    
+    <!-- footer section -->
+    <div class="footer">
+        <h4>All Right Reserved® 2023</h4>
+        <a href="">Al Abed Jafry</a>
+    </div>
+
+    
+    <!-- firebase db connection code -->
+    <script type="module">
+        // Import the functions we need from the SDKs
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js";
+        import { getDatabase, ref, set, get, onValue }  from "https://www.gstatic.com/firebasejs/10.4.0/firebase-database.js";
+         // Firebase configuration
+        const firebaseConfig = {
+        apiKey: "AIzaSyCIBeznpoOXpU_tJ2Eb6lc0UNwlxM-aGZ8",
+        authDomain: "spondonblooddonationdb.firebaseapp.com",
+        projectId: "spondonblooddonationdb",
+        storageBucket: "spondonblooddonationdb.appspot.com",
+        messagingSenderId: "916618952855",
+        appId: "1:916618952855:web:0e9b9c6e39b5a5beb5a9d2"
+        };
+        
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        
+        //connect to db of firebase.
+        let db = getDatabase(app);
+        
+        // select the DOM elements for doner registration.
+        let donerName = document.querySelector("#rgName");
+        let donerAge = document.querySelector("#rgAge");
+        let donerGender = document.querySelector("#rgGender");
+        let donerReligion = document.querySelector("#rgReligion");
+        let donerBloodGroup = document.querySelector("#rgBlood_group");
+        let donerPhone = document.querySelector("#rgPhone");
+        let donerLocation = document.querySelector("#rgLocation");
+        let submitBtn = document.querySelector("#rgBtn");
+
+        let donerInfotable = document.querySelector("table");
+
+        // DOM selection for doner filter options.
+        let filterGender = document.querySelector("#filter__gender");
+        let filterReligion = document.querySelector("#filter__religion");
+        let filterBloodGroup = document.querySelector("#filter__blood_group");
+        let filterLocation = document.querySelector("#filter__location");
+        let filterBtn = document.querySelector(".filter_btn");
+
+        // variable declaretion.
+        let UID = 0;
+
+        // event declaretion for doner registration and filter.
+        window.ready = function (event) {
+            let changeEvents = (e) => {
+                console.log(e.target.value);
+                return e.target.value;
+            } 
+        }        
+
+        // db write code. 
+        submitBtn.addEventListener("click", function (event) {        
+            event.preventDefault();
+            set(ref(db, "user/" + UID++),
+            {
+                serial: UID,
+                donerName: donerName.value,
+                donerAge: donerAge.value,
+                donerGender: donerGender.value,
+                donerReligion: donerReligion.value,
+                donerBloodGroup: donerBloodGroup.value,
+                donerPhone: donerPhone.value,
+                donerLocation: donerLocation.value
+            })
+            alert("Thank You be a Doner");
+        })
+
+        // db read code.
+        var userRef = ref(db, "user/");
+        onValue(userRef, (snapshot) => {
+            const userSnapshots = snapshot.val();
+            // show filtered doner information.
+            // add event listener for filtered doner.
+            // filterBtn.addEventListener("click", function(){
+                userSnapshots.filter((data) => {
+                    if(data.donerGender == filterGender.value || data.donerReligion == filterReligion.value || data.donerBloodGroup == filterBloodGroup.value || data.donerLocation == filterLocation.value){
+                        let template = `<tr>
+                            <td>${data.serial}</td>
+                            <td>${data.donerName}</td>
+                            <td>${data.donerAge}</td>
+                            <td>${data.donerGender}</td>
+                            <td>${data.donerReligion}</td>
+                            <td>${data.donerBloodGroup}</td>
+                            <td>${data.donerPhone}</td>
+                            <td>${data.donerLocation}</td> 
+                        </tr>`
+                        donerInfotable.innerHTML += template;
+                    }else{
+                        let template = `<tr>
+                            <td>${data.serial}</td>
+                            <td>${data.donerName}</td>
+                            <td>${data.donerAge}</td>
+                            <td>${data.donerGender}</td>
+                            <td>${data.donerReligion}</td>
+                            <td>${data.donerBloodGroup}</td>
+                            <td>${data.donerPhone}</td>
+                            <td>${data.donerLocation}</td> 
+                        </tr>`
+                        donerInfotable.innerHTML += template;
+                    }
+                })
+            })
+        // });
+    </script>
+    
+    <script src="./script.js"></script>
+</body>
+</html>
